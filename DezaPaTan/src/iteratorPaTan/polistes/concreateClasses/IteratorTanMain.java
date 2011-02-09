@@ -8,9 +8,9 @@ package iteratorPaTan.polistes.concreateClasses;
 public class IteratorTanMain {
 	public static void main(String[] args) {
 		Aquarium aquarium = new Aquarium(10);
-		aquarium.setMarimo(new Marimo("Mariko", 4));
-		aquarium.setMarimo(new Marimo("Marina", 3));
-		aquarium.setMarimo(new Marimo("Mariannu", 50));
+		aquarium.addMarimo(new Marimo("Mariko", 4));
+		aquarium.addMarimo(new Marimo("Marina", 3));
+		aquarium.addMarimo(new Marimo("Mariannu", 50));
 
 
 		for(Marimo marimo : aquarium){

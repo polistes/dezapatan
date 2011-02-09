@@ -21,7 +21,7 @@ public class Aquarium implements AggregatorTan<Marimo> {
 		this.marimoNum = 0;
 	}
 
-	public void setMarimo(Marimo marimo){
+	public void addMarimo(Marimo marimo){
 		if(marimoNum < marimos.length){
 			marimos[marimoNum++] = marimo;
 		}
