@@ -4,7 +4,13 @@ public class TestDriver {
 
 	/*
 	 * まりもカート
-	 * ver.0.1 
+	 * ver.0.2 
+	 * 
+	 * 変更点
+	 * 西島産のコードを参考に簡略化
+	 * 1. 直感的に使えるようにCarPartsFactoryクラス内にファクトリメソッド(Simple Factory)を作った 
+	 * 			=> final にしてるけど、子クラス（工場）が工場を作れてしまう世界になってしまうので、あるメソッドを継承から除外するって書き方できるんですか？ 
+	 * 2. CarPartsFactory を interface から abstract に変更し、デフォルトのエンジンとブレーキを定義した 
 	 */
 	public static void main(String[] args) {
 		// Init
@@ -13,16 +19,15 @@ public class TestDriver {
 		
 		// Red
 		System.out.println("--- Red ---");
-		cpfactory  = new RedPartsFactory(); // <--- RedParts
+		cpfactory  = CarPartsFactory.createFactory(CarPartsFactory.RED); // <--- RedParts
 		car = new Car();
 		car.setPartsFactory(cpfactory);
-		
 		car.startEngine();
 		car.brake();
 		
 		// Blue
 		System.out.println("--- Blue ---");
-		cpfactory  = new BluePartsFactory(); // <--- BlueParts (ほかは変化なし
+		cpfactory  = CarPartsFactory.createFactory(CarPartsFactory.BLUE); // <--- BlueParts (ほかは変化なし
 		car = new Car();
 		car.setPartsFactory(cpfactory);
 		
@@ -31,7 +36,7 @@ public class TestDriver {
 		
 		// Yellow
 		System.out.println("--- Yellow ---");
-		cpfactory  = new YellowPartsFactory(); // <--- YellowParts (ほかは変化なし
+		cpfactory  = CarPartsFactory.createFactory(CarPartsFactory.YELLOW); // <--- YellowParts (ほかは変化なし
 		car = new Car();
 		car.setPartsFactory(cpfactory);
 		

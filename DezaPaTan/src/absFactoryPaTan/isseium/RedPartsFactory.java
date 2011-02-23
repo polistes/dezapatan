@@ -1,6 +1,6 @@
 package absFactoryPaTan.isseium;
 
-public class RedPartsFactory implements  CarPartsFactory{
+public class RedPartsFactory extends  CarPartsFactory{
 	public Engine createEngine(){
 		return new NormalEngine();
 	}
