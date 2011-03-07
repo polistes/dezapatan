@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import compositePaTan.polistes.interfaces.MarimoColony;
 
-public class Colony extends MarimoColony{
+public class Colony implements MarimoColony{
 	private String name;
 	private ArrayList<MarimoColony> mclist;
 	
@@ -13,12 +13,10 @@ public class Colony extends MarimoColony{
 		this.mclist = new ArrayList<MarimoColony>();
 	}
 		
-	@Override
 	public String getName() {
 		return name;
 	}
 
-	@Override
 	public int getSize() {
 		int sum = 0;
 		for(MarimoColony mc : mclist){
@@ -27,12 +25,10 @@ public class Colony extends MarimoColony{
 		return sum;
 	}
 
-	@Override
 	public void add(MarimoColony mc) {
 		mclist.add(mc);
 	}
 
-	@Override
 	public String printList(String prefix) {
 		StringBuffer sb = new StringBuffer();
 		sb.append("c\t");sb.append(prefix);sb.append("/");

@@ -1,6 +1,6 @@
 package compositePaTan.polistes.interfaces;
 
-public abstract class MarimoColony {
+public interface MarimoColony {
 	public abstract String getName();
 	public abstract int getSize();
 	public abstract void add(MarimoColony mc);

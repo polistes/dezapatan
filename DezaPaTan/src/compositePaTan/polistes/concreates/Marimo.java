@@ -2,7 +2,7 @@ package compositePaTan.polistes.concreates;
 
 import compositePaTan.polistes.interfaces.MarimoColony;
 
-public class Marimo extends MarimoColony{
+public class Marimo implements MarimoColony{
 	private String name;
 	private int size;
 	
@@ -18,24 +18,19 @@ public class Marimo extends MarimoColony{
 		}
 	}
 	
-	@Override
 	public String getName() {
 		return name;
 	}
 
-	@Override
 	public int getSize() {
 		return size;
 	}
 
-	@Override
 	public void add(MarimoColony mc) {
 		throw new ArrayIndexOutOfBoundsException();
 	}
 
-	@Override
 	public String printList(String prefix) {
-		// TODO Auto-generated method stub
 		return "m\t" + prefix + "/" + name + "\t" + size;
 	}
 	
