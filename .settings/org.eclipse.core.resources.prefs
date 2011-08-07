@@ -1,4 +1,4 @@
-#Sun Jun 19 13:35:58 JST 2011
+#Mon Aug 01 23:50:25 JST 2011
 eclipse.preferences.version=1
 encoding//DezaPaTan/src/absFactoryPaTan/polistes/interfaces/MarimoProduct.java=UTF-8
 encoding//DezaPaTan/src/adapterPaTan/MarimoDrive.java=UTF-8
@@ -10,3 +10,4 @@ encoding//DezaPaTan/src/commandPaTan/kuidaoring/YasaiCommand.java=UTF-8
 encoding//DezaPaTan/src/compositePaTan/polistes/marimo/concreates/Colony.java=UTF-8
 encoding//DezaPaTan/src/compositePaTan/polistes/marimo/concreates/Golden.java=UTF-8
 encoding//DezaPaTan/src/compositePaTan/polistes/marimo/concreates/Marimo.java=UTF-8
+encoding/<project>=UTF-8
