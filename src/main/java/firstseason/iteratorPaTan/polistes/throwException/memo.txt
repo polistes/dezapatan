@@ -1,0 +1,17 @@
+##### Javaに組み込まれているエラーを返すタイプ #####
+最初、ArrayIndexOutOfBoundsExceptionを利用してhasNextメソッドを除外しようと思ったが、
+AggregatorであるAquariumに処理が依存していることに気づいた。
+
+配列の範囲外を参照しようとしても利用でいるのはAquariumのgetMarimoメソッドだけであり、
+配列の範囲外は参照することができなかった。
+
+
+##### nullを返すタイプ #####
+ReturnNullIteratorを参照
+これもこれでAquariumのgetNextメソッドに完全に依存した実装になっている。
+
+##### Exceptionを投げるタイプ #####
+投げるExceptionは適当に決めたので特に意味はない。
+実際問題だと、今回利用したArrayIndexOutOfBoundsExceptionを利用してしまうと
+本来のArrayIndexOutOfBoundsExceptionを検知できなくなるので好ましくないと思われる。
+ループをtry-catchで囲むことで終了処理を行ったが、nullを返すパターンと同じ記述でもループが回ってしまって驚いた。

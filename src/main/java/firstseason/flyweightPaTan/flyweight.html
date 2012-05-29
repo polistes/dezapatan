@@ -1,0 +1,93 @@
+<html>
+<head>
+</head>
+<body>
+<h1>Number Display</h1>
+<canvas id="dispArea" width="400" height="36">
+</canvas><br>
+<input type="text" id="input">
+<button id="dispBtn">display!</button>
+</body>
+<script>
+<!--
+(function(){
+    var
+    $ = function(id) {
+        return document.getElementById(id)
+    },
+    canvas = $('dispArea'),
+    ctx    = canvas.getContext('2d'),
+    btn    = $('dispBtn'),
+    input  = $('input');
+
+    btn.addEventListener('click', function(){
+        var
+        text = input.value,
+        nums,
+        i, len;
+        if(! text.match(/^[0-9]+$/)) {
+            alert('plese input "Number" !');
+            return;
+        }
+        clear();
+        nums = text.split('');
+        for(i = 0, len = nums.length; i < len;i++){
+            NumberImageLoader.loadImage(nums[i], (function(index){
+                return function(img){
+                    ctx.drawImage(img, index * 36, 0);
+                };
+            }(i)));
+        }
+    });
+
+    function clear() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        NumberImageLoader.detachOnload();
+    }
+
+    NumberImageLoader = (function(){
+        var
+        pool = {},
+        cbQueue = {},
+        baseUrl = 'http://kuidaoring.appspot.com/images/number5_';
+
+        function loadImage(n, cb) {
+            var
+            img, tmpCb;
+
+            if(! pool[n]) {
+                cbQueue[n] = [];
+                cbQueue[n][cbQueue[n].length] = cb;
+                img = new Image();
+                img.src = baseUrl + n + '.gif';
+                img.onload = function() {
+                    var cb;
+                    while(cb = cbQueue[n].shift()) {
+                        cb(img);
+                    }
+                };
+                pool[n] = img;
+            } else if(! pool[n].complete){
+                cbQueue[n][cbQueue[n].length] = cb;
+            } else {
+                cb(pool[n])
+            }
+        }
+
+        function detachOnload() {
+            var k;
+            for(k in cbQueue) {
+                cbQueue[k] = [];
+            }
+        }
+
+        return {
+            loadImage    : loadImage,
+            detachOnload : detachOnload,
+        };
+    }());
+
+}());
+-->
+</script>
+</html>
