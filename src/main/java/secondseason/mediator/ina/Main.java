@@ -1,4 +1,4 @@
-package secondseason.mediator;
+package secondseason.mediator.ina;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -17,7 +17,7 @@ class MyPanel extends JPanel implements Runnable{
 		g.clearRect(0, 0, 500, 500);
 		gm.draw(g);
 	}
-	@Override
+	
 	public void run() {
 		while(true){
 			gm.run();

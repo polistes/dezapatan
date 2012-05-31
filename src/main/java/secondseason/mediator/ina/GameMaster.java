@@ -1,4 +1,4 @@
-package secondseason.mediator;
+package secondseason.mediator.ina;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -116,7 +116,6 @@ public class GameMaster extends ChrMediator implements KeyListener{
 		}
 	}
 	
-	@Override
 	public void keyPressed(KeyEvent arg0) {
 		switch(arg0.getKeyChar()){
 		case 'l':
@@ -138,12 +137,12 @@ public class GameMaster extends ChrMediator implements KeyListener{
 			
 		}
 	}
-	@Override
+	
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
+	
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		

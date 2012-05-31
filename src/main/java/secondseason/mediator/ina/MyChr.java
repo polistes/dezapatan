@@ -1,4 +1,4 @@
-package secondseason.mediator;
+package secondseason.mediator.ina;
 
 public class MyChr extends Chr {
 	public MyChr(int x, int y){

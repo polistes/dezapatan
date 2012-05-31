@@ -1,4 +1,4 @@
-package secondseason.mediator;
+package secondseason.mediator.ina;
 import java.awt.Graphics;
 
 
