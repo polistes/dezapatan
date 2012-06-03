@@ -1,4 +1,4 @@
-class BannerAD implements AD {
+class BannerAD extends AD {
 
     public String getADHTML() {
         return "<div>\n" +
