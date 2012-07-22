@@ -16,14 +16,15 @@ public class Client {
 		System.out.println("golden marimo by golden tool : " + mb.createGoldenMarimo());
 
 		System.out.println("----------");
-		MarimoBreeder loggingBreeder = new LoggingBreeder();
-		loggingBreeder.setTool(standard);
-		System.out.println("normal marimo by standard tool : " + loggingBreeder.createNormalMarimo());
-		System.out.println("golden marimo by standard tool : " + loggingBreeder.createGoldenMarimo());
+		BulkBreeder bb = new BulkBreeder();
+		bb.setLoop(10);
+		bb.setTool(standard);
+		System.out.println("normal marimo by standard tool : " + bb.createNormalMarimo());
+		System.out.println("golden marimo by standard tool : " + bb.createGoldenMarimo());
 
-		loggingBreeder.setTool(goldenTool);
+		bb.setTool(goldenTool);
 		System.out.println("----------");
-		System.out.println("normal marimo by golden tool : " + loggingBreeder.createNormalMarimo());
-		System.out.println("golden marimo by golden tool : " + loggingBreeder.createGoldenMarimo());
+		System.out.println("normal marimo by golden tool : " + bb.createNormalMarimo());
+		System.out.println("golden marimo by golden tool : " + bb.createGoldenMarimo());
 	}
 }
