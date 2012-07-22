@@ -3,11 +3,11 @@ package secondseason.bridge.polistes;
 public class GoldenSpecializedTool implements BreedingTool{
 
 	public int expandNormal(int i) {
-		return i;
+		return i / 5;
 	}
 
 	public int expandGolden(int i) {
-		return (int)(i * 1.75);
+		return i * 2;
 	}
 
 }
