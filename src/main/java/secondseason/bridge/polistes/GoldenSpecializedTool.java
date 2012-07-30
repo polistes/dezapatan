@@ -1,13 +1,19 @@
 package secondseason.bridge.polistes;
 
+import java.util.Collections;
+import java.util.List;
+
 public class GoldenSpecializedTool implements BreedingTool{
 
-	public int expandNormal(int i) {
-		return i / 5;
+	public List<Marimo> createNormalMarimo(MarimoBreeder mb) {
+		return Collections.nCopies(
+				mb.creatableNormalMarimoNum()/5,
+				new Marimo());
 	}
 
-	public int expandGolden(int i) {
-		return i * 2;
+	public List<GoldenMarimo> createGoldenMarimo(MarimoBreeder mb) {
+		return Collections.nCopies(
+				mb.creatableGoldenMarimoNum()*2,
+				new GoldenMarimo()); 
 	}
-
 }

@@ -1,31 +1,32 @@
 package secondseason.bridge.polistes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class BulkBreeder extends MarimoBreeder{
-	private MarimoBreeder breeder = new MarimoBreeder();
 	private int loop = 1;
 	
 	@Override
-	public void setTool(BreedingTool bt) {
-		breeder.setTool(bt);
-	}
-	
-	@Override
-	public int createNormalMarimo() {
-		int numMarimo = 0;
+	public List<Marimo> createNormalMarimo() {
+		List<Marimo> marimos = new ArrayList<Marimo>();
 		for (int i = 0; i < loop ; i++) {
-			numMarimo += breeder.createNormalMarimo();
+			for (Marimo m : super.createNormalMarimo()) {
+				marimos.add(m);
+			}
 		}
-		return numMarimo;
+		return marimos;
 	}
 
 	@Override
-	public int createGoldenMarimo() {
-		int numMarimo = 0;
+	public List<GoldenMarimo> createGoldenMarimo() {
+		List<GoldenMarimo> marimos = new ArrayList<GoldenMarimo>();
 		for (int i = 0; i < loop ; i++) {
-			numMarimo += breeder.createGoldenMarimo();
+			for (GoldenMarimo m : super.createGoldenMarimo()) {
+				marimos.add(m);
+			}
 		}
-		return numMarimo;
+		return marimos;
 	}
 	
 	public void setLoop(int loop) {
